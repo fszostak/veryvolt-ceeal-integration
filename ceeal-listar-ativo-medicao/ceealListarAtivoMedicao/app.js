@@ -40,7 +40,7 @@ exports.lambdaHandler = async (event, context) => {
     const client = await soap
       .createClientAsync(url, { wsdl_headers: { Authorization: auth } })
       .then((client) => {
-        return client.ceealListarAtivoMedicao(args, function (err, result) {
+        return client.listarAtivoMedicao(args, function (err, result) {
           if (err) throw err
           console.log(result)
         })
